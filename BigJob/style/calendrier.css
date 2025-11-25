@@ -1,0 +1,471 @@
+:root {
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --accent-weak: #e6f0ff;
+    --today: #fef3c7;
+    --border: #e6e9ee;
+    --radius: 8px;
+    --shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.calendar-wrap {
+    max-width: 980px;
+    margin: 28px auto;
+    padding: 20px;
+}
+
+.calendar {
+    background: linear-gradient(180deg, var(--card), var(--card));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.calendar-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.calendar-nav button {
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.calendar-nav button:hover {
+    background: var(--accent-weak);
+    color: var(--accent);
+    border-color: rgba(37, 99, 235, 0.12);
+}
+
+.calendar-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.calendar-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: var(--card);
+    padding: 10px 12px;
+    gap: 6px;
+}
+
+.weekday {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    padding: 12px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+}
+
+.day {
+    background: transparent;
+    min-height: 96px;
+    border-radius: 8px;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: background .15s ease, transform .06s ease;
+    border: 1px solid transparent;
+}
+
+.day:hover {
+    background: rgba(37, 99, 235, 0.03);
+    transform: translateY(-2px);
+}
+
+.day .date {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.day .meta {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.day.other-month {
+    color: var(--muted);
+    opacity: 0.8;
+}
+
+.day.today {
+    background: var(--today);
+    border: 1px solid rgba(245, 158, 11, 0.12);
+}
+
+.day.selected {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.06), rgba(37, 99, 235, 0.04));
+    border: 1px solid rgba(37, 99, 235, 0.16);
+}
+
+.event {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.event-list {
+    margin-top: auto;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.legend {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+
+@media (max-width: 800px) {
+    .calendar-wrap {
+        padding: 12px
+    }
+
+    .day {
+        min-height: 76px;
+        padding: 6px
+    }
+}
+
+@media (max-width: 520px) {
+    .weekdays {
+        font-size: 0.75rem;
+        padding: 8px
+    }
+
+    .day {
+        min-height: 64px;
+        padding: 6px
+    }
+
+    .calendar-header {
+        padding: 12px
+    }
+
+    .calendar-title {
+        font-size: 1rem
+    }
+}
+
+
+@media print {
+    body {
+        background: #fff
+    }
+
+    .calendar {
+        box-shadow: none;
+        border: 0
+    }
+}
+
+.hidden {
+    display: none !important
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0
+}
+
+
+#cld {
+    max-width: 980px;
+    margin: 22px auto;
+    padding: 10px;
+}
+
+#enteteCld {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+#cldt {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+#avantEtapres {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cldBtn {
+    background: transparent;
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.cldBtn:hover {
+    background: var(--accent-weak);
+    color: var(--accent);
+}
+
+#jour5 {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.jourSemaine {
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 10px 6px;
+    background: var(--card);
+    border-radius: 6px;
+}
+
+
+.semaine {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.case {
+    min-height: 96px;
+    background: transparent;
+    border-radius: 8px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: background .15s ease, transform .06s ease;
+}
+
+.case:hover {
+    background: rgba(37, 99, 235, 0.03);
+    transform: translateY(-2px);
+}
+
+.case {
+    position: relative;
+}
+
+.case .date {
+    font-weight: 700;
+    color: #0f172a;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 0.95rem;
+}
+
+
+.reserveBtn {
+    margin-top: 18px;
+    align-self: flex-start;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: transparent;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    color: var(--muted);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reserveBtn:hover {
+    background: var(--accent-weak);
+    color: var(--accent)
+}
+
+.case.reserved {
+    box-shadow: inset 0 0 0 2px rgba(37, 99, 235, 0.06);
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.03), rgba(37, 99, 235, 0.01));
+}
+
+
+.case:hover {
+    cursor: pointer
+}
+
+
+.resv-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.45);
+    backdrop-filter: blur(2px)
+}
+
+.resv-modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--card);
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    width: min(480px, 92%);
+    z-index: 10001;
+    border: 1px solid var(--border)
+}
+
+.resv-modal h3 {
+    margin: 0 0 8px 0
+}
+
+.resv-modal label {
+    display: block;
+    margin-top: 8px;
+    font-weight: 600
+}
+
+.resv-modal input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #e6e9ee;
+    border-radius: 6px;
+    margin-top: 6px
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 6px;
+    padding: 8px 12px;
+    border: 0
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 6px
+}
+
+
+#resv-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000
+}
+
+.case.other-month {
+    color: var(--muted);
+    opacity: 0.85;
+}
+
+.case.today {
+    background: var(--today);
+    border: 1px solid rgba(245, 158, 11, 0.12);
+}
+
+.case.selected {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.06), rgba(37, 99, 235, 0.04));
+    border: 1px solid rgba(37, 99, 235, 0.16);
+}
+
+@media (max-width: 800px) {
+    .case {
+        min-height: 76px;
+    }
+
+    #enteteCld {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 520px) {
+    .jourSemaine {
+        font-size: 0.75rem;
+        padding: 8px;
+    }
+
+    .case {
+        min-height: 64px;
+        padding: 6px;
+    }
+
+    #cldt {
+        font-size: 1rem;
+    }
+}

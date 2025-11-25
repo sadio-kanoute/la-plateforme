@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "userId": 3,
+        "date": "2025-01-22",
+        "status": "pending"
+    },
+    {
+        "id": 2,
+        "userId": 4,
+        "date": "2025-01-23",
+        "status": "accepted"
+    },
+    {
+        "id": 3,
+        "userId": 5,
+        "date": "2025-01-25",
+        "status": "pending"
+    },
+    {
+        "id": 4,
+        "userId": 3,
+        "date": "2025-01-26",
+        "status": "refused"
+    },
+    {
+        "id": 5,
+        "userId": 2,
+        "date": "2025-01-27",
+        "status": "pending"
+    }
+]

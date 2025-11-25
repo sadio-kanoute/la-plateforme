@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Utilisateurs</title>
+
+    <!-- Bootstrap -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet">
+
+    <!-- Styles admin -->
+    <link rel="stylesheet" href="./styles/admin.css">
+</head>
+
+<body class="bg-light text-dark">
+
+    <!-- HEADER -->
+    <header class="border-bottom py-3 bg-white">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h4 m-0 fw-semibold">Utilisateurs</h1>
+            <nav>
+                <a href="admin.html" class="me-4 text-decoration-none text-dark">Dashboard</a>
+                <a href="requests.html" class="me-4 text-decoration-none text-dark">Demandes</a>
+                <a href="../login.html" class="text-decoration-none text-dark">Déconnexion</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="container py-5">
+
+        <h2 class="h5 fw-semibold mb-4">Gestion des rôles</h2>
+
+        <!-- TABLEAU DES UTILISATEURS -->
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Rôle</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="users-table">
+                    <!-- Les lignes seront injectées en JS -->
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- JS -->
+    <script src="./js/storage.js"></script>
+    <script src="./js/roles.js"></script>
+
+</body>
+</html>

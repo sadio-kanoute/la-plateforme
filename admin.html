@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice Admin</title>
+
+    <!-- Bootstrap -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="./styles/admin.css">
+</head>
+
+<body class="bg-light text-dark">
+
+    <!-- HEADER -->
+    <header class="border-bottom py-3 bg-white">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h4 m-0 fw-semibold"> Interface Admin • Projet BigJob</h1>
+            <nav>
+                <a href="roles.html" class="me-4 text-decoration-none text-dark">Utilisateurs</a>
+                <a href="requests.html" class="me-4 text-decoration-none text-dark">Demandes</a>
+                <a href="../login.html" class="text-decoration-none text-dark">Déconnexion</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="container py-5">
+
+        <section class="mb-5">
+            <h2 class="h5 fw-semibold mb-3">Tableau de bord</h2>
+            <p class="text-muted">Bienvenue dans la zone d'administration. Gérez les rôles, les utilisateurs et les demandes de présence.</p>
+        </section>
+
+        <!-- CARDS -->
+        <div class="row g-4">
+
+            <!-- USERS -->
+            <div class="col-md-6">
+                <div class="p-4 bg-white rounded-3 shadow-sm dashboard-card">
+                    <h3 class="h6 fw-semibold mb-2">Gestion des utilisateurs</h3>
+                    <p class="text-muted small mb-3">
+                        Consultez et modifiez les rôles des membres : utilisateur, modérateur, administrateur.
+                    </p>
+                    <a href="roles.html" class="btn btn-dark px-4 py-2">Voir</a>
+                </div>
+            </div>
+
+            <!-- REQUESTS -->
+            <div class="col-md-6">
+                <div class="p-4 bg-white rounded-3 shadow-sm dashboard-card">
+                    <h3 class="h6 fw-semibold mb-2">Demandes de présence</h3>
+                    <p class="text-muted small mb-3">
+                        Validez ou refusez les demandes envoyées par les étudiants.
+                    </p>
+                    <a href="requests.html" class="btn btn-dark px-4 py-2">Gérer</a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
