@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "firstName": "Coco",
+        "lastName": "Castillo",
+        "email": "coco@laplateforme.io",
+        "password": "admin123",
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "firstName": "Sarah",
+        "lastName": "Martin",
+        "email": "sarah.martin@laplateforme.io",
+        "password": "test123",
+        "role": "moderator"
+    },
+    {
+        "id": 3,
+        "firstName": "Liam",
+        "lastName": "Dupont",
+        "email": "liam.dupont@laplateforme.io",
+        "password": "user123",
+        "role": "user"
+    },
+    {
+        "id": 4,
+        "firstName": "Emma",
+        "lastName": "Lopez",
+        "email": "emma.lopez@laplateforme.io",
+        "password": "user123",
+        "role": "user"
+    },
+    {
+        "id": 5,
+        "firstName": "Noah",
+        "lastName": "Bernard",
+        "email": "noah.bernard@laplateforme.io",
+        "password": "user123",
+        "role": "user"
+    }
+]

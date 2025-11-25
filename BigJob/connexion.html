@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Connexion</title>
+    <link rel="stylesheet" href="style/connexion.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h2>Se connecter</h2>
+
+      <div id="message"></div>
+
+      <form id="connexion-form">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+
+        <div class="field">
+          <label for="password">Mot de passe</label>
+          <div class="pwd-row">
+            <input id="password" name="password" type="password" required />
+          </div>
+        </div>
+        <div class="actions">
+          <button id="submitBtn" type="submit">Connexion</button>
+        </div>
+      </form>
+    </main>
+
+    <script src="js/header.js"></script>
+    <script src="js/connect.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/local_storage.js"></script>
+  </body>
+</html>
